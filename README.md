@@ -9,3 +9,6 @@ added "Reset" button to set health back to 20
 
 v1.11-------------
 Added alert for when HP = 0 "YOU BE DEAD SON!"
+
+v1.2--------------
+Added Poison Counter!
