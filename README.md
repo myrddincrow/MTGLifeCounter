@@ -12,3 +12,6 @@ Added alert for when HP = 0 "YOU BE DEAD SON!"
 
 v1.2--------------
 Added Poison Counter!
+
+v1.21--------------
+Cleaned up code, removed errant variables
