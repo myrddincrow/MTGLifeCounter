@@ -1,4 +1,4 @@
-//MTG Life(HP) Counter v1.2 - By MyrddinCROW, HP starts at 20, + or - adds or subtracts life from your total
+//MTG Life(HP) Counter v1.21 - By MyrddinCROW, HP starts at 20, + or - adds or subtracts life from your total
 //Poison Starts at 0 counters, at 10 you be dead son!
 
 //-------Life(HP) Counter-------------------
@@ -6,22 +6,21 @@
 function addHp(){
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
-  var hpUP = currentHP + 1;
-  document.getElementById("hp").innerHTML = hpUP;
+  var currentHP = currentHP + 1;
+  document.getElementById("hp").innerHTML = currentHP;
 }
 //Minus HP
 function minusHp(){
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
-  var hpDOWN = currentHP - 1;
-  document.getElementById("hp").innerHTML = hpDOWN;
-  if (hpDOWN == 0) {
+  currentHP = currentHP - 1;
+  document.getElementById("hp").innerHTML = currentHP;
+  if (currentHP == 0) {
     alert("YOU BE DEAD SON!");
   }
 }
 //Reset HP
 function resetHp(){
-  var currentHP = document.getElementById("hp").innerHTML;
   document.getElementById("hp").innerHTML = 20;
 }
 //-----------Poison Counter--------------
@@ -29,9 +28,9 @@ function resetHp(){
 function addPois(){
   var currentPOIS = document.getElementById("poison").innerHTML;
   currentPOIS = parseFloat(currentPOIS);
-  var poisUP = currentPOIS + 1;
-  document.getElementById("poison").innerHTML = poisUP;
-  if (poisUP == 10) {
+  currentPOIS = currentPOIS + 1;
+  document.getElementById("poison").innerHTML = currentPOIS;
+  if (currentPOIS == 10) {
     alert("YOU BE DEAD SON!");
   }
 }
@@ -39,12 +38,11 @@ function addPois(){
 function minusPois(){
   var currentPOIS = document.getElementById("poison").innerHTML;
   currentPOIS = parseFloat(currentPOIS);
-  var poisDOWN = currentPOIS - 1;
-  document.getElementById("poison").innerHTML = poisDOWN;
+  currentPOIS = currentPOIS - 1;
+  document.getElementById("poison").innerHTML = currentPOIS;
 }
 //Reset Poison Counters
 function resetPois(){
-  var currentHP = document.getElementById("poison").innerHTML;
   document.getElementById("poison").innerHTML = 0;
 }
 //------ CALL ALL THE FUNCTIONS! --------
