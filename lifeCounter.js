@@ -13,6 +13,9 @@ function minusHp(){
   currentHP = parseFloat(currentHP);
   var hpDOWN = currentHP - 1;
   document.getElementById("hp").innerHTML = hpDOWN;
+    if (hpDOWN == 0) {
+    alert("YOU BE DEAD SON!");
+  }
 }
 
 //Reset HP
