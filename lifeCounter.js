@@ -1,6 +1,6 @@
 //MTG Life(HP) Counter v1.21 - By MyrddinCROW, HP starts at 20, + or - adds or subtracts life from your total
 //Poison Starts at 0 counters, at 10 you be dead son!
-
+//----DEFINE ALL THE FUNCTIONS!!-------
 //-------Life(HP) Counter-------------------
 //Add HP
 function addHp(){
