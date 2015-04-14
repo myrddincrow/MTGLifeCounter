@@ -6,7 +6,7 @@
 function addHp(){
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
-  var currentHP = currentHP + 1;
+  currentHP = currentHP + 1;
   document.getElementById("hp").innerHTML = currentHP;
 }
 //Minus HP
