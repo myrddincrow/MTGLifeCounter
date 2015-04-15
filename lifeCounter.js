@@ -5,15 +5,13 @@
 //Add HP
 function addHp(){
   var currentHP = document.getElementById("hp").innerHTML;
-  currentHP = parseFloat(currentHP);
-  currentHP = currentHP + 1;
+  currentHP = parseFloat(currentHP) + 1;
   document.getElementById("hp").innerHTML = currentHP;
 }
 //Minus HP
 function minusHp(){
   var currentHP = document.getElementById("hp").innerHTML;
-  currentHP = parseFloat(currentHP);
-  currentHP = currentHP - 1;
+  currentHP = parseFloat(currentHP) - 1;
   document.getElementById("hp").innerHTML = currentHP;
   if (currentHP == 0) {
     alert("YOU BE DEAD SON!");
@@ -27,8 +25,7 @@ function resetHp(){
 //Add Poison Counters
 function addPois(){
   var currentPOIS = document.getElementById("poison").innerHTML;
-  currentPOIS = parseFloat(currentPOIS);
-  currentPOIS = currentPOIS + 1;
+  currentPOIS = parseFloat(currentPOIS) + 1;
   document.getElementById("poison").innerHTML = currentPOIS;
   if (currentPOIS == 10) {
     alert("YOU BE DEAD SON!");
@@ -37,8 +34,7 @@ function addPois(){
 //Minus Poison Counters
 function minusPois(){
   var currentPOIS = document.getElementById("poison").innerHTML;
-  currentPOIS = parseFloat(currentPOIS);
-  currentPOIS = currentPOIS - 1;
+  currentPOIS = parseFloat(currentPOIS) - 1;
   document.getElementById("poison").innerHTML = currentPOIS;
 }
 //Reset Poison Counters
