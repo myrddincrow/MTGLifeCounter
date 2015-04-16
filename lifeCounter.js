@@ -4,19 +4,23 @@
 //-------Life(HP) Counter-------------------
 function lifeCounter(){
 //Add HP
-var displayUP = 0;
-var timer = 1000;
+
+//Vars for Displaying How much HP/Poison was added or subtracted
+var displayHPUP = 0;
+var displayHPDOWN = 0;
+var timer;
 
 document.getElementById("HPup").onclick = function (){
+  clearTimeout(timer);
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
   currentHP++;
   document.getElementById("hp").innerHTML = currentHP;
-  displayUP++;
-  document.getElementById("plusHP").innerHTML = "+" + displayUP;
-  timer = 1000;
-  setTimeout(function (){displayUP = 0; document.getElementById("plusHP").innerHTML = "+" + displayUP;}, timer);
+  displayHPUP++;
+  document.getElementById("plusHP").innerHTML = "+" + displayHPUP;
+  timer = setTimeout(function (){displayHPUP = 0; document.getElementById("plusHP").innerHTML = "";}, 1000);
 };
+
 //Minus HP
 document.getElementById("HPdown").onclick = function () {
   var currentHP = document.getElementById("hp").innerHTML;
