@@ -8,25 +8,36 @@ function lifeCounter(){
 //Vars for Displaying How much HP/Poison was added or subtracted
 var displayHPUP = 0;
 var displayHPDOWN = 0;
-var timer;
+var timerHPUP;
+var timerHPDOWN
 
 document.getElementById("HPup").onclick = function (){
-  clearTimeout(timer);
+  //Stop the Timer for displaying how much HP is added
+  clearTimeout(timerHPUP);
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
   currentHP++;
   document.getElementById("hp").innerHTML = currentHP;
+  //increment the amount of HP added & write it to display
   displayHPUP++;
   document.getElementById("plusHP").innerHTML = "+" + displayHPUP;
-  timer = setTimeout(function (){displayHPUP = 0; document.getElementById("plusHP").innerHTML = "";}, 1000);
+  //Start the timer for how much HP is added
+  timerHPUP = setTimeout(function (){displayHPUP = 0; document.getElementById("plusHP").innerHTML = "";}, 1000);
 };
 
 //Minus HP
 document.getElementById("HPdown").onclick = function () {
+  //Stop the Timer for displaying how much HP is added
+  clearTimeout(timerHPDOWN);
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
   currentHP--;
   document.getElementById("hp").innerHTML = currentHP;
+  //increment the amount of HP removes & write it to display
+  displayHPDOWN++;
+  document.getElementById("minusHP").innerHTML = "-" + displayHPDOWN;
+  //Start the timer for how much HP is added
+  timerHPDOWN = setTimeout(function (){displayHPDOWN = 0; document.getElementById("minusHP").innerHTML = "";}, 1000);
   if (currentHP == 0) {
     alert("YOU BE DEAD SON!");
   }
