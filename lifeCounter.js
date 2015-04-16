@@ -46,10 +46,12 @@ document.getElementById("HPdown").onclick = function () {
     alert("YOU BE DEAD SON!");
   }
 };
+
 //Reset HP
 document.getElementById("HPreset").onclick = function (){
   document.getElementById("hp").innerHTML = 20;
 };
+
 //-----------Poison Counter--------------
 //Add Poison Counters
 document.getElementById("POISup").onclick = function () {
@@ -68,6 +70,7 @@ document.getElementById("POISup").onclick = function () {
     alert("YOU BE DEAD FROM POISON SON!");
   }
 };
+
 //Minus Poison Counters
 document.getElementById("POISdown").onclick = function (){
   //Stop the Timer for displaying how much Poison is added
@@ -82,10 +85,12 @@ document.getElementById("POISdown").onclick = function (){
   //Start the timer for how much Poison is added
   timerPOISDOWN = setTimeout(function (){displayPOISDOWN = 0; document.getElementById("minusPOIS").innerHTML = "";}, 1000);
 };
+
 //Reset Poison Counters
 document.getElementById("POISreset").onclick = function (){
   document.getElementById("poison").innerHTML = 0;
 };
 }
+
 //Ready ALL the Functions onload!
 window.onload = function() {lifeCounter()};
