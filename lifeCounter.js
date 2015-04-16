@@ -32,7 +32,7 @@ document.getElementById("POISup").onclick = function () {
   currentPOIS++;
   document.getElementById("poison").innerHTML = currentPOIS;
   if (currentPOIS == 10) {
-    alert("YOU BE DEAD SON!");
+    alert("YOU BE DEAD FROM POISON SON!");
   }
 };
 //Minus Poison Counters
