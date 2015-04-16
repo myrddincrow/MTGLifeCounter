@@ -33,10 +33,10 @@ document.getElementById("HPdown").onclick = function () {
   currentHP = parseFloat(currentHP);
   currentHP--;
   document.getElementById("hp").innerHTML = currentHP;
-  //increment the amount of HP removes & write it to display
+  //increment the amount of HP removed & write it to display
   displayHPDOWN++;
   document.getElementById("minusHP").innerHTML = "-" + displayHPDOWN;
-  //Start the timer for how much HP is added
+  //Start the timer for how much HP is removed
   timerHPDOWN = setTimeout(function (){displayHPDOWN = 0; document.getElementById("minusHP").innerHTML = "";}, 1000);
   if (currentHP == 0) {
     alert("YOU BE DEAD SON!");
