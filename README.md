@@ -18,3 +18,6 @@ Cleaned up code, removed errant variables
 
 v1.3---------------
 Added the display for how much HP is added or subtracted at the time, + in green - in red, disapears after 1000ms
+
+v1.31-------------
+Added the display to the Poison counter
