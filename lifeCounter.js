@@ -9,7 +9,7 @@ function lifeCounter(){
 var displayHPUP = 0;
 var displayHPDOWN = 0;
 var timerHPUP;
-var timerHPDOWN
+var timerHPDOWN;
 
 document.getElementById("HPup").onclick = function (){
   //Stop the Timer for displaying how much HP is added
