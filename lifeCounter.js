@@ -5,10 +5,7 @@
 function lifeCounter(){
 //Add HP
 var displayUP = 0;
-function resetDisplay(){
-  displayUP = 0;
-}
-setTimeout(function (){resetDisplay()}, 1000);
+var timer = 1000;
 
 document.getElementById("HPup").onclick = function (){
   var currentHP = document.getElementById("hp").innerHTML;
@@ -17,6 +14,8 @@ document.getElementById("HPup").onclick = function (){
   document.getElementById("hp").innerHTML = currentHP;
   displayUP++;
   document.getElementById("plusHP").innerHTML = "+" + displayUP;
+  timer = 1000;
+  setTimeout(function (){displayUP = 0; document.getElementById("plusHP").innerHTML = "+" + displayUP;}, timer);
 };
 //Minus HP
 document.getElementById("HPdown").onclick = function () {
