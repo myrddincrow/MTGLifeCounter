@@ -4,11 +4,19 @@
 //-------Life(HP) Counter-------------------
 function lifeCounter(){
 //Add HP
+var displayUP = 0;
+function resetDisplay(){
+  displayUP = 0;
+}
+setTimeout(function (){resetDisplay()}, 1000);
+
 document.getElementById("HPup").onclick = function (){
   var currentHP = document.getElementById("hp").innerHTML;
   currentHP = parseFloat(currentHP);
   currentHP++;
   document.getElementById("hp").innerHTML = currentHP;
+  displayUP++;
+  document.getElementById("plusHP").innerHTML = "+" + displayUP;
 };
 //Minus HP
 document.getElementById("HPdown").onclick = function () {
