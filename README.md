@@ -21,3 +21,6 @@ Added the display for how much HP is added or subtracted at the time, + in green
 
 v1.31-------------
 Added the display to the Poison counter
+
+v1.32--------------
+Externalized CSS
