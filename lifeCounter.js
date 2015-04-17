@@ -5,45 +5,45 @@
 function lifeCounter(){
 //Add HP
 //Vars for Displaying How much HP/Poison was added or subtracted
-var displayHPUP = 0;
-var displayHPDOWN = 0;
-var displayPOISUP = 0;
-var displayPOISDOWN = 0;
-var timerHPUP;
-var timerHPDOWN;
-var timerPOISUP;
-var timerPOISDOWN;
+var displayHpUp = 0,
+    displayHpDown = 0,
+    displayPoisUp = 0,
+    displayPoisDown = 0,
+    timerHpUp,
+    timerHpDown,
+    timerPoisUp,
+    timerPoisDown;
 //Hide Minus Poison button at start
-hidePOISdown();
+hidePoisDown();
 document.getElementById("HPup").onclick = function (){
   //Stop the Timer for displaying how much HP is added
-  clearTimeout(timerHPUP);
-  var currentHP = document.getElementById("hp").innerHTML;
-  currentHP = parseFloat(currentHP);
-  currentHP++;
-  document.getElementById("hp").innerHTML = currentHP;
+  clearTimeout(timerHpUp);
+  var currentHp = document.getElementById("hp").innerHTML;
+  currentHp = parseInt(currentHp);
+  currentHp++;
+  document.getElementById("hp").innerHTML = currentHp;
   //increment the amount of HP added & write it to display
-  displayHPUP++;
-  document.getElementById("plusHP").innerHTML = "+" + displayHPUP;
+  displayHpUp++;
+  document.getElementById("plusHP").innerHTML = "+" + displayHpUp;
   //Start the timer for how much HP is added
-  timerHPUP = setTimeout(function (){displayHPUP = 0; document.getElementById("plusHP").innerHTML = "";}, 1000);
+  timerHpUp = setTimeout(function (){displayHpUp = 0; document.getElementById("plusHP").innerHTML = "";}, 1000);
 };
 
 //Minus HP
 document.getElementById("HPdown").onclick = function () {
   //Stop the Timer for displaying how much HP is added
-  clearTimeout(timerHPDOWN);
-  var currentHP = document.getElementById("hp").innerHTML;
-  currentHP = parseFloat(currentHP);
-  currentHP--;
-  document.getElementById("hp").innerHTML = currentHP;
+  clearTimeout(timerHpDown);
+  var currentHp = document.getElementById("hp").innerHTML;
+  currentHp = parseInt(currentHp);
+  currentHp--;
+  document.getElementById("hp").innerHTML = currentHp;
   //increment the amount of HP removed & write it to display
-  displayHPDOWN++;
-  document.getElementById("minusHP").innerHTML = "-" + displayHPDOWN;
+  displayHpDown++;
+  document.getElementById("minusHP").innerHTML = "-" + displayHpDown;
   //Start the timer for how much HP is removed
-  timerHPDOWN = setTimeout(function (){displayHPDOWN = 0; document.getElementById("minusHP").innerHTML = "";}, 1000);
+  timerHpDown = setTimeout(function (){displayHpDown = 0; document.getElementById("minusHP").innerHTML = "";}, 1000);
   //Let player know if they are dead
-  if (currentHP == 0) {
+  if (currentHp == 0) {
     alert("YOU BE DEAD SON!");
   }
 };
@@ -57,20 +57,20 @@ document.getElementById("HPreset").onclick = function (){
 //Add Poison Counters
 document.getElementById("POISup").onclick = function () {
   //Stop the Timer for displaying how much Poison is added
-  clearTimeout(timerPOISUP);
-  currentPOIS = document.getElementById("poison").innerHTML;
-  currentPOIS = parseFloat(currentPOIS);
-  currentPOIS++;
-  document.getElementById("poison").innerHTML = currentPOIS;
+  clearTimeout(timerPoisUp);
+  currentPois = document.getElementById("poison").innerHTML;
+  currentPois = parseInt(currentPois);
+  currentPois++;
+  document.getElementById("poison").innerHTML = currentPois;
   //increment the amount of Poison added & write it to display
-  displayPOISUP++;
-  document.getElementById("plusPOIS").innerHTML = "+" + displayPOISUP;
+  displayPoisUp++;
+  document.getElementById("plusPOIS").innerHTML = "+" + displayPoisUp;
   //Start the timer for how much Poison is added
-  timerPOISUP = setTimeout(function (){displayPOISUP = 0; document.getElementById("plusPOIS").innerHTML = "";}, 1000);
+  timerPoisUp = setTimeout(function (){displayPoisUp = 0; document.getElementById("plusPOIS").innerHTML = "";}, 1000);
   //Check if Minus Poison should be hidden
-  hidePOISdown();
+  hidePoisDown();
   //Let Plater know if they have died
-  if (currentPOIS == 10) {
+  if (currentPois == 10) {
     alert("YOU BE DEAD FROM POISON SON!");
   }
 };
@@ -78,27 +78,27 @@ document.getElementById("POISup").onclick = function () {
 //Minus Poison Counters
 document.getElementById("POISdown").onclick = function (){
   //Stop the Timer for displaying how much Poison is added
-  clearTimeout(timerPOISDOWN);
-  currentPOIS = document.getElementById("poison").innerHTML;
-  currentPOIS = parseFloat(currentPOIS);
-  currentPOIS--;
-  document.getElementById("poison").innerHTML = currentPOIS;
+  clearTimeout(timerPoisDown);
+  currentPois = document.getElementById("poison").innerHTML;
+  currentPois = parseInt(currentPois);
+  currentPois--;
+  document.getElementById("poison").innerHTML = currentPois;
   //increment the amount of Poison added & write it to display
-  displayPOISDOWN++;
-  document.getElementById("minusPOIS").innerHTML = "-" + displayPOISDOWN;
+  displayPoisDown++;
+  document.getElementById("minusPOIS").innerHTML = "-" + displayPoisDown;
   //Start the timer for how much Poison is added
-  timerPOISDOWN = setTimeout(function (){displayPOISDOWN = 0; document.getElementById("minusPOIS").innerHTML = "";}, 1000);
+  timerPoisDown = setTimeout(function (){displayPoisDown = 0; document.getElementById("minusPOIS").innerHTML = "";}, 1000);
   //Check if Minus Poison should be hidden
-  hidePOISdown();
+  hidePoisDown();
 };
 
 //Reset Poison Counters
 document.getElementById("POISreset").onclick = function (){
   document.getElementById("poison").innerHTML = 0;
-  hidePOISdown();
+  hidePoisDown();
 };
 //Hide Minus Poison Button when Poison counters = 0
-function hidePOISdown(){
+function hidePoisDown(){
 if (document.getElementById("poison").innerHTML == 0){
   document.getElementById("POISdown").style.display = "none";
 } else {
