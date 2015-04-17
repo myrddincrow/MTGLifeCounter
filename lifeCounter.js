@@ -4,7 +4,6 @@
 //-------Life(HP) Counter-------------------
 function lifeCounter(){
 //Add HP
-
 //Vars for Displaying How much HP/Poison was added or subtracted
 var displayHPUP = 0;
 var displayHPDOWN = 0;
