@@ -34,6 +34,7 @@ function addSubCounter(){
   $(addRemove).text(addOrSub + display);
   //Start the timer for how much HP or Poison is added
   timer = setTimeout(function (){display = 0; $("#plusHP").text(""); $("#minusHP").text("");$("#plusPOIS").text("");$("#minusPOIS").text("");}, 500);
+  hidePoisDown();
 }
 hidePoisDown();
 $("input:button").click(function(){
@@ -61,7 +62,6 @@ $("input:button").click(function(){
     addRemove = "#plusPOIS";
     addOrSub = "+";
     addSubCounter();
-    hidePoisDown();
     if ($("#poison").text() == 10) {
       alert("YOU BE DEAD FROM POISON SON!");
     }
@@ -71,7 +71,6 @@ $("input:button").click(function(){
       addRemove = "#minusPOIS";
       addOrSub = "-";
       addSubCounter();
-      hidePoisDown();
     //Reset Poison
     } else if ( $(this).is( "input#POISreset") ) {
       $("#poison").text("0");
