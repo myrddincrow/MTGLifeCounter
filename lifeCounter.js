@@ -8,10 +8,7 @@ var display = 0,
     current,
     addRemove,
     addOrSub,
-    timerHpUp,
-    timerHpDown,
-    timerPoisUp,
-    timerPoisDown;
+    timer;
 //Hide Minus Poison Button when Poison counters = 0
 function hidePoisDown(){
     if ($("#poison").text() == 0){
@@ -21,16 +18,22 @@ function hidePoisDown(){
     }
 }
 function addSubCounter(){
+  //Stop the Timer for displaying how much HP or Poison is added
+  clearTimeout(timer);
   var currentHpPois = $(current).text();
+  //Add HP or Poison
   if (addOrSub == "+") {
-  currentHpPois = parseInt(currentHpPois) + 1 ;
-} else if (addOrSub == "-"){
-currentHpPois = parseInt(currentHpPois) - 1 ;
-}
+    currentHpPois = parseInt(currentHpPois) + 1 ;
+  //Minus HP or Poison
+  } else if (addOrSub == "-"){
+    currentHpPois = parseInt(currentHpPois) - 1 ;
+  }
   $(current).text(currentHpPois);
-  //increment the amount of HP added & write it to display
+  //increment the amount of HP or poinson added & write it to display
   display++;
   $(addRemove).text(addOrSub + display);
+  //Start the timer for how much HP or Poison is added
+  timer = setTimeout(function (){display = 0; $("#plusHP").text(""); $("#minusHP").text("");$("#plusPOIS").text("");$("#minusPOIS").text("");}, 500);
 }
 hidePoisDown();
 $("input:button").click(function(){
@@ -39,23 +42,13 @@ $("input:button").click(function(){
     current = "#hp";
     addRemove = "#plusHP";
     addOrSub = "+"
-    //Stop the Timer for displaying how much HP is added
-    clearTimeout(timerHpUp);
-    //Add or Subtract the Counter
     addSubCounter();
-    //Start the timer for how much HP is added
-    timerHpUp = setTimeout(function (){display = 0; $(addRemove).text("");}, 1000);
   //Minus HP
   } else if ( $(this).is( "input#HPdown" ) ) {
     current = "#hp";
     addRemove = "#minusHP";
     addOrSub = "-";
-    //Stop the Timer for displaying how much HP is added
-    clearTimeout(timerHpDown);
-    //Add or Subtract the Counter
     addSubCounter();
-    //Start the timer for how much HP is added
-    timerHpDown = setTimeout(function (){display = 0; $(addRemove).text("");}, 1000);
     if ($("#hp").text() == 0) {
       alert("YOU BE DEAD SON!");
     }
@@ -67,27 +60,19 @@ $("input:button").click(function(){
     current = "#poison";
     addRemove = "#plusPOIS";
     addOrSub = "+";
-    //Stop the Timer for displaying how much HP is added
-    clearTimeout(timerPoisUp);
-    //Add or Subtract the Counter
     addSubCounter();
-    //Start the timer for how much HP is added
-    timerPoisUp = setTimeout(function (){display = 0; $(addRemove).text("");}, 1000);
     hidePoisDown();
     if ($("#poison").text() == 10) {
       alert("YOU BE DEAD FROM POISON SON!");
     }
+    //Minus Poison
     } else if ( $(this).is( "input#POISdown" ) ) {
       current = "#poison";
       addRemove = "#minusPOIS";
       addOrSub = "-";
-      //Stop the Timer for displaying how much HP is added
-      clearTimeout(timerPoisDown);
-      //Add or Subtract the Counter
       addSubCounter();
-      //Start the timer for how much HP is added
-      timerPoisDown = setTimeout(function (){display = 0; $(addRemove).text("");}, 1000);
       hidePoisDown();
+    //Reset Poison
     } else if ( $(this).is( "input#POISreset") ) {
       $("#poison").text("0");
       hidePoisDown();
