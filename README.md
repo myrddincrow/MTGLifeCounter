@@ -24,3 +24,6 @@ Added the display to the Poison counter
 
 v1.32--------------
 Externalized CSS
+
+v1.4--------------
+Refactored to use jQuery & DRY code.
